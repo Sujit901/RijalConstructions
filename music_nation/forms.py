@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.forms.widgets import Widget
 
 from .models import Album, Song
+from .models import Profile
 
 
 class NewAlbum(forms.ModelForm):
@@ -19,7 +20,7 @@ class SignUpForm(UserCreationForm):
         required='True')
     last_name = forms.CharField(required='True')
 
-    field_order = ['first_name',
+    field_order = [ 'first_name',
                    'last_name', 'username', 'email', 'password1', 'password2']
 
     class meta:
@@ -49,3 +50,5 @@ class NewSong(forms.ModelForm):
     class Meta:
         model = Song
         fields = ('song_name', 'song_file',)
+
+

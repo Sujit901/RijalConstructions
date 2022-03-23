@@ -1,23 +1,63 @@
 {% extends 'music_nation/base.html' %}
-
-{%block title%}
-{%endblock%}
-{%block content%}
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
 <hr/>
 <div>
   <ul class="home-list">
+    <img src="{% static 'music_nation/img/landingpage.jpg' %}" style="width:1325px; height:900px;" alt="My image">
+</div>
+<div>
+  <p style="margin-left:30px; font-size:30px;"><b>Projects</b></p>
     {% for album in albums %}
-      <li >
+     <hr/> <li>
         <span><a class="home-a" href="{% url 'music_nation:album_detail' username=album.album_artist album=album.album_name %}">
           <img src="{{ album.album_logo.url }}" style="width:150px">
         </a></span>
          <span style="color:#000000; font-size:30px">{{album.album_name}} by</span>
-        <a style="font-size:30px" class="home-a" href="{% url 'music_nation:profile_detail' username=album.album_artist %}">
+        <a style="font-size:30px" class="home-a" href="#">
           {{album.album_artist}}
         </a>
       </li><hr/>
     {% endfor %}
   </ul>
+  <div class="footer" style= "
+color: black;
+margin: 0;
+position: absolute;
+left: 1450px;
+margin-right: -1000px;
+transform: translate(-1000px, -10px); font-size:40px;">
+  <p class="text">
+<b style="
+color: black;
+top: 1000%;
+position: fixed;
+left: 0;
+bottom: 0;
+width: 620px;
+height: 100px;
+background-color:lightgray; 
+background-image: linear-gradient( red , grey);
+">
+Rijal Constructions and Builders PVT. LTD.
+</b>
+  </p>
+</div>
 </div>
 
+<!--<div align="center" style= "margin: 0;
+position: absolute;
+top: 90%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%)">
+{{ song.song_name }}<br>
+<audio controls style="width:1000px">
+  <source src="{{ song.song_file.url }}" type="audio/mp3">
+</audio>
+
+</div>-->
 {%endblock%}

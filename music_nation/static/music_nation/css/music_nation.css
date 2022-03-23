@@ -47,10 +47,10 @@ body{
 }
 
 .home-a{
-  color: #000b9e;
+  color: #000000;
 }
 
 .home-a:hover {
   text-decoration: none;
-  color: #F00;
+  color: rgb(0, 0, 0);
 }

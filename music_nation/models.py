@@ -41,3 +41,16 @@ class Song(models.Model):
 
     def delete_media(self):
         os.remove(path=MEDIA_ROOT+'/'+str(self.song_file))
+    
+    #def delete(self, using=None, keep_parents=False):
+        #self.song.storage.delete(self.song.name)
+        #super().delete()
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+

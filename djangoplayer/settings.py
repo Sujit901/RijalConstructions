@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,6 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'music_nation:home'
 LOGOUT_REDIRECT_URL = 'music_nation:home'
 LOGIN_URL = 'music_nation:login'
+
+#if DEBUG :False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'#during development only.
